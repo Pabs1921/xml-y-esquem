@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="partes" type="tipoPartes"/>
+    <xs:complexType name="tipoPartes">
+        <xs:sequence>
+            <xs:element name="numero_de_partes" type="xs:int"/>
+            <xs:element name="mes" type="tipoMes"/>
+        </xs:sequence>
+    </xs:complexType>
+   <xs:complexType name="tipoMes">
+       <xs:sequence>
+           <xs:element name="id_parte" type="tipoIdParte"/>
+       </xs:sequence>
+       <xs:attribute name="mes_del_parte" type="xs:string"/>
+   </xs:complexType>
+    <xs:complexType name="tipoIdParte">
+        <xs:sequence>
+            <xs:element name="numero_de_parte" type="tipoNumParte" default="000000" />
+            <xs:element name="kilometros_inicio" type="tipoKmInicio" default="000000"/>
+            <xs:element name="kilometros_final" type="tipoKmFinal" default="000001"/>
+            <xs:element name="gastos_gasoil" type="tipoGastosGasoil" default="00000"/>
+            <xs:element name="gastos_peajes" type="tipoGastosPeaje" default="00000"/>
+            <xs:element name="gastos_dietas" type="tipoGastosDietas" default="00000"/>
+            <xs:element name="otros_gastos" type="tipoGastosOtros" default="00000"/>
+            <xs:element name="incidencias" type="tipoIncidencias" default="Ninguna"/>
+            <xs:element name="dni_admin" type="xs:string" />
+            <xs:element name="dni_logis" type="xs:string"/>
+            <xs:element name="fecha_parte" type="xs:date"/>
+            <xs:element name="estado_parte" type="tipoEstado" default="cerrado"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="tipoNumParte">
+        <xs:restriction base="xs:ID">
+            <xs:minInclusive value="000001"/>
+            <xs:maxInclusive value="999999"/>
+        </xs:restriction>
+
+    </xs:simpleType>
+    <xs:simpleType name="tipoKmInicio">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="000000"/>
+            <xs:maxInclusive value="999998"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoKmFinal">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0000050"/>
+            <xs:maxInclusive value="9999999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoGastosGasoil">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="00000"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoGastosPeaje">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="00000"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoGastosDietas">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="00000"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoGastosOtros">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="00000"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoIncidencias">
+        <xs:restriction base="xs:string">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoEstado">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="abierto"/>
+            <xs:enumeration value="cerrado"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
