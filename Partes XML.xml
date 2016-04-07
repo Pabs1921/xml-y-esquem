@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE partes
+        [<!ENTITY copy SYSTEM "Proyecto Esquema.xsd">]>
+
+<partes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Proyecto Esquema.xsd">
+    <numero_de_partes></numero_de_partes>
+    <mes>
+        <id_parte>
+            <numero_de_parte></numero_de_parte>
+            <kilometros_inicio></kilometros_inicio>
+            <kilometros_final></kilometros_final>
+            <gastos_gasoil></gastos_gasoil>
+            <gastos_peajes></gastos_peajes>
+            <gastos_dietas></gastos_dietas>
+            <otros_gastos></otros_gastos>
+            <incidencias></incidencias>
+            <dni_admin></dni_admin>
+            <dni_logis></dni_logis>
+            <fecha_parte></fecha_parte>
+            <estado_parte></estado_parte>
+        </id_parte>
+    </mes>
+</partes>
